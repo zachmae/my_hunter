@@ -5,6 +5,8 @@
 ## le make lance tout le projet
 ##
 
+CC = gcc -o
+
 SRC	=	hunter.c	\
 		handle_textures.c	\
 		draw.c	\
@@ -20,7 +22,7 @@ all:		$(NAME)
 
 $(NAME):
 		make -C lib/my
-		gcc -o $(NAME) $(SRC) -I./include -L./lib -lmy -l csfml-audio -l csfml-graphics -l csfml-system -l csfml-window -l csfml-network
+		$(CC) $(NAME) $(SRC) -I./include -L./lib -lmy -l csfml-audio -l csfml-graphics -l csfml-system -l csfml-window -l csfml-network
 
 clean:
 		make -C lib/my clean
